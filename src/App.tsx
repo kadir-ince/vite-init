@@ -3,10 +3,11 @@ import { ConfigProvider, theme as antTheme, Button } from "antd";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import { useTheme } from "./hooks/useTheme";
+import { ThemeProvider } from "./context/ThemeContext";
+import { useThemeContext } from "./context/ThemeContext";
 
-const App = () => {
-  const { theme, toggleTheme } = useTheme();
+const AppContent = () => {
+  const { theme, toggleTheme } = useThemeContext();
 
   return (
     <ConfigProvider
@@ -84,6 +85,14 @@ const App = () => {
         </div>
       </Router>
     </ConfigProvider>
+  );
+};
+
+const App = () => {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 };
 
