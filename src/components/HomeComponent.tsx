@@ -1,9 +1,10 @@
+import { Card } from "antd";
+
 const HomeComponent = () => {
   return (
-    <div>
-      <h2>Ana Sayfa İçeriği</h2>
+    <Card title="Ana Sayfa İçeriği">
       <p>Burası ana sayfa komponenti</p>
-    </div>
+    </Card>
   );
 };
 
